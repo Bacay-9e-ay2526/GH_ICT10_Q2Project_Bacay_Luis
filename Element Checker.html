@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <title>Non-Metal Elements Data Reference</title>
+    <style>
+        :root {
+            --navy: #0b1d3a;
+            --navy-dark: #050e1c;
+            --orange: #ff6600;
+            --orange-light: #ff944d;
+            --steel: #15161a;
+            --steel-light: #23252c;
+            --gold: #f0b323;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Rajdhani', sans-serif;
+            color: #f4f4f4;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(255, 102, 0, 0.25), transparent 55%),
+                linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem 1rem;
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(90deg, var(--navy-dark), var(--navy) 50%, var(--navy-dark));
+            border-bottom: 3px solid var(--orange);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--orange-light);
+            text-decoration: none;
+        }
+
+        .nav-brand .basketball-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #fff 0%, var(--orange) 40%, var(--navy-dark) 80%);
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 10px var(--orange);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 0.55rem 1rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--orange-light);
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid transparent;
+            border-radius: 6px;
+            transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: var(--orange);
+            box-shadow: 0 0 12px rgba(255, 102, 0, 0.45);
+        }
+
+        .nav-links a[aria-current="page"] {
+            color: var(--navy-dark);
+            background: var(--orange);
+            border-color: var(--orange-light);
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--steel-light), var(--steel));
+            border: 2px solid var(--orange);
+            border-top: 6px solid var(--gold);
+            border-radius: 12px;
+            color: #f4f4f4;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .card-header {
+            background: transparent;
+            border-bottom: 1px solid rgba(255, 102, 0, 0.35);
+            text-align: center;
+            padding: 1.75rem 1.5rem 1.25rem;
+        }
+
+        .hero-ball {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            background: radial-gradient(circle, #fff 0%, var(--orange) 35%, #b33600 70%, var(--navy-dark) 100%);
+            border: 4px solid var(--gold);
+            box-shadow: 0 0 18px var(--orange);
+        }
+
+        .card-header h2 {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--orange);
+        }
+
+        .instructions {
+            margin-bottom: 1.5rem;
+            padding: 0.9rem 1.1rem;
+            font-size: 1.05rem;
+            color: #e6e6e6;
+            background: rgba(255, 102, 0, 0.1);
+            border-left: 5px solid var(--orange);
+            border-radius: 6px;
+        }
+
+        .form-label {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--orange-light);
+        }
+
+        .form-control {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+            background: #0e0f12;
+            border: 1px solid #4a4d57;
+            border-radius: 6px;
+        }
+
+        .form-control:focus {
+            background: #0e0f12;
+            border-color: var(--orange);
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+            color: #fff;
+        }
+
+        .btn-check-details {
+            padding: 0.85rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(180deg, var(--orange) 0%, #b33600 100%);
+            border: 2px solid var(--gold);
+            border-radius: 6px;
+        }
+
+        #result_output {
+            min-height: 120px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--orange-light);
+            background: rgba(255, 102, 0, 0.1);
+            border-left: 5px solid var(--orange);
+            border-radius: 6px;
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 1.2rem 1rem;
+            font-size: 0.95rem;
+            color: #d6d6d6;
+            background: linear-gradient(90deg, var(--navy-dark), var(--navy), var(--navy-dark));
+            border-top: 4px solid var(--orange);
+        }
+        .site-footer span { color: var(--orange-light); font-weight: 600; }
+    </style>
+</head>
+<body class="d-flex flex-column">
+
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="nav-brand" href="./index.html">
+            <span class="basketball-icon" aria-hidden="true"></span>
+            Varsity Portal
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Tryout Checker</a></li>
+            <li><a href="Element Checker.html" aria-current="page">Drills Ref</a></li>
+            <li><a href="School Club Members.html">Team Roster</a></li>
+            <li><a href="Creator.html">Meet the Creator</a></li>
+        </ul>
+    </nav>
+
+    <div class="container py-5 flex-grow-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="hero-ball" aria-hidden="true"></div>
+                        <h2><i class="bi bi-shield-shaded"></i> Non-Metal Elements Reference</h2>
+                        <p class="text-muted text-uppercase small">Chemistry Data Lookup</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="instructions">
+                            <strong>Instructions:</strong><br>
+                            Enter the <b>Non-Metal Element Symbol</b> (Example: H, He, C, N, O, Cl).
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label" for="input_symbol">
+                                    <i class="bi bi-search"></i> Element Symbol
+                                </label>
+                                <input type="text" id="input_symbol" class="form-control form-control-lg" placeholder="Enter symbol (e.g. H)">
+                            </div>
+                            <div class="d-grid">
+                                <input type="button" py-click="search_element_info" value="Check Element Details" class="btn btn-check-details btn-lg">
+                            </div>
+                        </form>
+                        <hr class="border-secondary my-4">
+                        <h5 class="text-warning font-monospace text-uppercase small mb-2"><i class="bi bi-list-check"></i> Element Details Result</h5>
+                        <div id="result_output" class="rounded p-3"></div>
+                    </div>
+                    <div class="card-footer text-center py-3 bg-black bg-opacity-20 text-muted small">
+                        Skills Test &bull; 2nd Quarter &bull; Greenhills Campus
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2026 <span>Basketball Varsity</span> &bull; Project 
+    </footer>
+
+    <py-script src="main.py"></py-script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
